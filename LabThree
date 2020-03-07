@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class LabThree {
+
+	public static void main(String[] args) {
+		final String INTEGER = "Integer: ";
+
+		printHelloWorld(); // executes printHelloWorld method
+
+		int input = getInputIntFromUser(); // sets int from user to input
+		System.out.println(INTEGER + input);
+
+		System.out.println(doubleString("cat"));
+	}
+
+	public static void printHelloWorld() {
+		System.out.println("Hello World!");
+	}
+
+	public static int getInputIntFromUser() {
+		final String ASK_FOR_INT = "Enter input integer: ";
+
+		// create a Scanner named scanner
+		Scanner scanner = new Scanner(System.in);
+
+		// ask user for an integer
+		System.out.println(ASK_FOR_INT);
+
+		// get integer from Scanner and set to "input"
+		int input = scanner.nextInt();
+		scanner.close(); // close scanner
+		return input; // returns the input
+
+	}
+
+	public static String doubleString(String string) {
+
+		return string + string;
+	}
+}
