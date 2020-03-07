@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class AssignmentFour {
+
+	static Scanner scanner = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		char inputChar = getInputCharFromUser();
+		String value = getValueFromChar(inputChar);
+		System.out.println(value);
+		System.out.println(isPass(70));
+		System.out.println(isPass(69));
+		printPay(17.50, 5);
+		scanner.close();
+	}
+
+	public static char getInputCharFromUser() {
+		final String CHAR_PROMPT = "Enter input char: ";
+		System.out.println(CHAR_PROMPT);
+		char inputChar = scanner.nextLine().charAt(0);
+		return inputChar;
+	}
+
+	public static String getValueFromChar(char inputChar) {
+		// switch code
+		switch (inputChar) {
+		case 'p':
+		case 'P':
+			return "Player";
+		case 'X':
+		case 'x':
+			return "Wall";
+		case ' ':
+			return "Empty";
+		default:
+			return "Invalid";
+		}
+
+	}
+
+	public static boolean isPass(int grade) {
+
+		return grade >= 70 ? true : false;
+
+	}
+
+	public static void printPay(double wage, int hours) {
+
+		double totalPay = wage * hours;
+		System.out.printf("$%.2f x %d = $%.2f", wage, hours, totalPay);
+
+	}
+}
